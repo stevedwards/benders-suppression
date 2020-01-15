@@ -28,18 +28,20 @@ A possible solution could be the following
 
 For a more in depth overview of the concept, as well as the model that formed the basis of this software, see the following [paper](https://pubsonline.informs.org/doi/10.1287/mnsc.47.7.1008.9805). 
 
-# Installation inside NGD (How to get the code working on your machine)
+# Installation (How to get the code working on your machine)
+
+This assumes you have Gurobi 8 installed including the Gurobi Interactive Shell.
 
 1. Clone repo using
 
 ```
-git clone https://git.infra.abs.gov.au/scm/cm/suppression.git
-cd suppression
+git clone https://github.com/stevedwards17/BendersSuppression.git
+cd BendersSuppression
 ```
 
 2. Open the Gurobi Interactive Shell (can access from start and typing "Gurobi" and is normally the first option)
 
-3. Enter the following commands in the Gurobi Interactive Shell. Note that, inside NGD, if you cloned the repo onto your Desktop then the "absolute\path\to\the\repo" should be "P:\\Desktop\suppression".
+3. Enter the following commands in the Gurobi Interactive Shell. 
 
 ```
 import subprocess
@@ -63,7 +65,7 @@ There are many optional flags that can be passed to the solver from the command 
 A relative path to a datafile is the only required parameter to the solver. See Input Data Format for more inforamation.
 
 ##### Optimiser (--optimise 1)
-By default only the diving heuristic is run. The solution can be improved by feeding it into a complete benders decomposition however currently this requires lazy-constraints which are not available inside NGD. This feature can be used when Gurobi 9 is available. The amount of time given to the complete solver can be configured with --optimise_time x, where x is the desired number of seconds (this does not include the time to obtain an initial feasible solution)
+By default only the diving heuristic is run. The amount of time given to the complete solver can be configured with --optimise_time x, where x is the desired number of seconds (this does not include the time to obtain an initial feasible solution)
 
 ##### Mode (--optimise 1)
 The solution can be outputted in three different modes. See Output Data Format for the details.
